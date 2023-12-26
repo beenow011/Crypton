@@ -13,7 +13,7 @@ import {
 function Sidebar() {
   const [menu, setmenu] = useState(false);
   return (
-    <div className="absolute top-5 right-2 md:hidden h-maxz-100 shadow-md  shadow-black">
+    <div className="absolute top-5 right-2 md:hidden h-max z-100 shadow-md  shadow-black">
       {menu ? (
         <Menu theme="dark" className=" w-max">
           <Menu.Item

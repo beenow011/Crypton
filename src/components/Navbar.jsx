@@ -14,11 +14,13 @@ function Navbar() {
   return (
     <div className="nav-container  ">
       <div className="logo-container flex my-auto bg-[#001529] px-4  ">
-        <Avatar
-          src={Icon}
-          size={64}
-          className="shadow-lg hover:shadow-green-300 m-3"
-        />
+        <Link to="/">
+          <Avatar
+            src={Icon}
+            size={64}
+            className="shadow-lg hover:shadow-green-300 m-3 hover:animate-pulse"
+          />
+        </Link>
         <Typography.Title level={1} className="logo mt-2 py-2 ">
           <Link to="/">Crypton</Link>
         </Typography.Title>
