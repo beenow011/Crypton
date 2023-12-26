@@ -12,7 +12,7 @@ import {
 import Icon from "../assets/logo.png";
 function Navbar() {
   return (
-    <div className="nav-container  ">
+    <div className="nav-container  sticky top-0">
       <div className="logo-container flex my-auto bg-[#001529] px-4  ">
         <Link to="/">
           <Avatar

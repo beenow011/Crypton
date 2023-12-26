@@ -4,6 +4,8 @@ import { Typography, Row, Col, Statistic, Spin, Flex } from "antd";
 import { Link } from "react-router-dom";
 import { useGetCryptosQuery } from "../../services/cryptoApi";
 import { useState } from "react";
+import Crypto from "./Crypto";
+import News from "./News";
 const { Title } = Typography;
 function Home() {
   const [showCurrency, setShowCurrency] = useState(false);
@@ -11,7 +13,7 @@ function Home() {
   const [showMarket, setShowMarket] = useState(false);
   const [showEx, setShowEx] = useState(false);
   const [show24h, setShow24h] = useState(false);
-  const { data, isLoading, isError } = useGetCryptosQuery();
+  const { data, isLoading, isError } = useGetCryptosQuery(10);
   if (isLoading)
     return (
       <Flex className="w-[100vw] h-[100vh]">
@@ -28,8 +30,10 @@ function Home() {
       {cryptoStats ? (
         <Row className="p-3  bg-green-200 w-max md:w-full rounded-md shadow-lg">
           <Col
-            span={12}
-            className="bg-green-300   p-2 border-black mx-1 md:mx-0 my-2 z-10 m-auto "
+            span={10}
+            xs={24}
+            sm={12}
+            className="md:bg-green-300   p-2 border-black  mx-1  my-2 z-10 m-auto "
             onMouseEnter={() => setShowCurrency((prev) => !prev)}
             onMouseLeave={() => setShowCurrency((prev) => !prev)}
           >
@@ -43,8 +47,10 @@ function Home() {
             />
           </Col>
           <Col
-            span={12}
-            className="bg-green-400   p-2 border-black mx-1 md:mx-0 my-2 z-10 m-auto "
+            span={10}
+            xs={24}
+            sm={12}
+            className="md:bg-green-400   p-2 border-black  mx-1  my-2 z-10 m-auto "
             onMouseEnter={() => setShowEx((prev) => !prev)}
             onMouseLeave={() => setShowEx((prev) => !prev)}
           >
@@ -58,8 +64,10 @@ function Home() {
             />
           </Col>
           <Col
-            span={12}
-            className="bg-green-500   p-2 border-black mx-1 md:mx-0 my-2 z-10 m-auto "
+            span={10}
+            xs={24}
+            sm={12}
+            className="md:bg-green-500   p-2 border-black  mx-1  my-2 z-10 m-auto "
             onMouseEnter={() => setShowCap((prev) => !prev)}
             onMouseLeave={() => setShowCap((prev) => !prev)}
           >
@@ -73,8 +81,10 @@ function Home() {
             />
           </Col>
           <Col
-            span={12}
-            className="bg-green-600   p-2 border-black mx-1 md:mx-0 my-2 z-10 m-auto "
+            span={10}
+            xs={24}
+            sm={12}
+            className="md:bg-green-600   p-2 border-black  mx-1  my-2 z-10 m-auto "
             onMouseEnter={() => setShow24h((prev) => !prev)}
             onMouseLeave={() => setShow24h((prev) => !prev)}
           >
@@ -88,8 +98,10 @@ function Home() {
             />
           </Col>
           <Col
-            span={12}
-            className="bg-green-700   p-2 border-black mx-1 md:mx-0 my-2 z-10 m-auto "
+            span={10}
+            xs={24}
+            sm={12}
+            className="md:bg-green-700   p-2 border-black  mx-1  my-2 z-10 m-auto "
             onMouseEnter={() => setShowMarket((prev) => !prev)}
             onMouseLeave={() => setShowMarket((prev) => !prev)}
           >
@@ -104,6 +116,21 @@ function Home() {
           </Col>
         </Row>
       ) : null}
+      <div className="my-4  ">
+        <Title level={2} className="p-2  ">
+          Top 10 Cryptocurrencies in the world
+        </Title>
+        <Crypto simplified />
+      </div>
+      <div className="my-4  ">
+        <Title level={2} className="p-2  ">
+          Latest Crypto news
+        </Title>
+        <News simplified />
+        <Title level={4} className="p-2 ">
+          <Link to="/news">Show more</Link>
+        </Title>
+      </div>
     </>
   );
 }

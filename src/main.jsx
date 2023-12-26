@@ -4,7 +4,7 @@ import App from "./App.jsx";
 import "./index.css";
 import { Router, RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Home, Exchange, News, Crypto, Details } from "./components/index.js";
-import "antd/dist/reset.css";
+import "antd/dist/antd.js";
 import store from "./app/store.js";
 import { Provider } from "react-redux";
 const router = createBrowserRouter([
