@@ -28,7 +28,7 @@ function Home() {
         Global Crypto Stats
       </Title>
       {cryptoStats ? (
-        <Row className="p-3  bg-green-200 w-max md:w-full rounded-md shadow-lg">
+        <Row className="p-3  bg-green-200 w-max md:w-full rounded-md shadow-lg overflow-hidden">
           <Col
             span={10}
             xs={24}
