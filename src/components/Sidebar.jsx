@@ -13,7 +13,7 @@ import {
 function Sidebar() {
   return (
     <div className="hidden md:block  shadow-black  ">
-      <Menu theme="dark" className=" w-max h-[100vh] sticky left-0">
+      <Menu theme="dark" className=" w-max h-full ">
         <Menu.Item icon={<HomeOutlined />}>
           <Link to="/">Home</Link>
         </Menu.Item>

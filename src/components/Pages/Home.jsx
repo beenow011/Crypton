@@ -116,8 +116,8 @@ function Home() {
           </Col>
         </Row>
       ) : null}
-      <div className="my-4  ">
-        <Title level={2} className="p-2  ">
+      <div className="my-4 w-screen md:w-full ">
+        <Title level={2} className="p-2 text-wrap ">
           Top 10 Cryptocurrencies in the world
         </Title>
         <Crypto simplified />
