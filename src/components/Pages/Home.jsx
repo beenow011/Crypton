@@ -127,9 +127,6 @@ function Home() {
           Latest Crypto news
         </Title>
         <News simplified />
-        <Title level={4} className="p-2 ">
-          <Link to="/news">Show more</Link>
-        </Title>
       </div>
     </>
   );
