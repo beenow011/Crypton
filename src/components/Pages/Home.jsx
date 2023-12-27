@@ -6,6 +6,7 @@ import { useGetCryptosQuery } from "../../services/cryptoApi";
 import { useState } from "react";
 import Crypto from "./Crypto";
 import News from "./News";
+import logo from "../../assets/logo2.png";
 const { Title } = Typography;
 function Home() {
   const [showCurrency, setShowCurrency] = useState(false);
@@ -28,93 +29,103 @@ function Home() {
         Global Crypto Stats
       </Title>
       {cryptoStats ? (
-        <Row className="p-3  bg-green-200 w-max md:w-full rounded-md shadow-lg overflow-hidden">
-          <Col
-            span={10}
-            xs={24}
-            sm={12}
-            className="md:bg-green-300   p-2 border-black  mx-1  my-2 z-10 m-auto "
-            onMouseEnter={() => setShowCurrency((prev) => !prev)}
-            onMouseLeave={() => setShowCurrency((prev) => !prev)}
-          >
-            <Statistic
-              title="Total currencies"
-              value={
-                showCurrency
-                  ? cryptoStats.totalCoins
-                  : millify(cryptoStats.totalCoins)
-              }
-            />
-          </Col>
-          <Col
-            span={10}
-            xs={24}
-            sm={12}
-            className="md:bg-green-400   p-2 border-black  mx-1  my-2 z-10 m-auto "
-            onMouseEnter={() => setShowEx((prev) => !prev)}
-            onMouseLeave={() => setShowEx((prev) => !prev)}
-          >
-            <Statistic
-              title="Total Exchanges"
-              value={
-                showEx
-                  ? cryptoStats.totalExchanges
-                  : millify(cryptoStats.totalExchanges)
-              }
-            />
-          </Col>
-          <Col
-            span={10}
-            xs={24}
-            sm={12}
-            className="md:bg-green-500   p-2 border-black  mx-1  my-2 z-10 m-auto "
-            onMouseEnter={() => setShowCap((prev) => !prev)}
-            onMouseLeave={() => setShowCap((prev) => !prev)}
-          >
-            <Statistic
-              title="Total Market Cap"
-              value={
-                showCap
-                  ? cryptoStats.totalMarketCap
-                  : millify(cryptoStats.totalMarketCap)
-              }
-            />
-          </Col>
-          <Col
-            span={10}
-            xs={24}
-            sm={12}
-            className="md:bg-green-600   p-2 border-black  mx-1  my-2 z-10 m-auto "
-            onMouseEnter={() => setShow24h((prev) => !prev)}
-            onMouseLeave={() => setShow24h((prev) => !prev)}
-          >
-            <Statistic
-              title="Total 24h Volume"
-              value={
-                show24h
-                  ? cryptoStats.total24hVolume
-                  : millify(cryptoStats.total24hVolume)
-              }
-            />
-          </Col>
-          <Col
-            span={10}
-            xs={24}
-            sm={12}
-            className="md:bg-green-700   p-2 border-black  mx-1  my-2 z-10 m-auto "
-            onMouseEnter={() => setShowMarket((prev) => !prev)}
-            onMouseLeave={() => setShowMarket((prev) => !prev)}
-          >
-            <Statistic
-              title="Total Markets"
-              value={
-                showMarket
-                  ? cryptoStats.totalMarkets
-                  : millify(cryptoStats.totalMarkets)
-              }
-            />
-          </Col>
-        </Row>
+        <div className="flex  bg-green-200  rounded-md shadow-lg overflow-hidden">
+          <Row className="p-3  bg-green-200 w-max md:w-full rounded-md  overflow-hidden">
+            <Col
+              span={10}
+              xs={24}
+              sm={12}
+              className="md:bg-green-300   p-2 border-black  mx-1  my-2 z-10 m-auto "
+              onMouseEnter={() => setShowCurrency((prev) => !prev)}
+              onMouseLeave={() => setShowCurrency((prev) => !prev)}
+            >
+              <Statistic
+                title="Total currencies"
+                value={
+                  showCurrency
+                    ? cryptoStats.totalCoins
+                    : millify(cryptoStats.totalCoins)
+                }
+              />
+            </Col>
+            <Col
+              span={10}
+              xs={24}
+              sm={12}
+              className="md:bg-green-400   p-2 border-black  mx-1  my-2 z-10 m-auto "
+              onMouseEnter={() => setShowEx((prev) => !prev)}
+              onMouseLeave={() => setShowEx((prev) => !prev)}
+            >
+              <Statistic
+                title="Total Exchanges"
+                value={
+                  showEx
+                    ? cryptoStats.totalExchanges
+                    : millify(cryptoStats.totalExchanges)
+                }
+              />
+            </Col>
+            <Col
+              span={10}
+              xs={24}
+              sm={12}
+              className="md:bg-green-500   p-2 border-black  mx-1  my-2 z-10 m-auto "
+              onMouseEnter={() => setShowCap((prev) => !prev)}
+              onMouseLeave={() => setShowCap((prev) => !prev)}
+            >
+              <Statistic
+                title="Total Market Cap"
+                value={
+                  showCap
+                    ? cryptoStats.totalMarketCap
+                    : millify(cryptoStats.totalMarketCap)
+                }
+              />
+            </Col>
+            <Col
+              span={10}
+              xs={24}
+              sm={12}
+              className="md:bg-green-600   p-2 border-black  mx-1  my-2 z-10 m-auto "
+              onMouseEnter={() => setShow24h((prev) => !prev)}
+              onMouseLeave={() => setShow24h((prev) => !prev)}
+            >
+              <Statistic
+                title="Total 24h Volume"
+                value={
+                  show24h
+                    ? cryptoStats.total24hVolume
+                    : millify(cryptoStats.total24hVolume)
+                }
+              />
+            </Col>
+            <Col
+              span={10}
+              xs={24}
+              sm={12}
+              className="md:bg-green-700   p-2 border-black  mx-1  my-2 z-10 m-auto "
+              onMouseEnter={() => setShowMarket((prev) => !prev)}
+              onMouseLeave={() => setShowMarket((prev) => !prev)}
+            >
+              <Statistic
+                title="Total Markets"
+                value={
+                  showMarket
+                    ? cryptoStats.totalMarkets
+                    : millify(cryptoStats.totalMarkets)
+                }
+              />
+            </Col>
+          </Row>
+
+          <img
+            src={logo}
+            alt=""
+            width={500}
+            height={100}
+            className="hidden md:block"
+          />
+        </div>
       ) : null}
       <div className="my-4 w-screen md:w-full ">
         <Title level={2} className="p-2 text-wrap ">
