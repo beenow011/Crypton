@@ -36,6 +36,9 @@ function App() {
             <Link to="/news" className="px-2">
               News
             </Link>
+            <Link to="https://github.com/beenow011/Crypton" className="px-2">
+              Github
+            </Link>
           </Space>
         </div>
       </div>

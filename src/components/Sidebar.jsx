@@ -14,16 +14,14 @@ function Sidebar() {
   return (
     <div className="hidden md:block  shadow-black  ">
       <Menu theme="dark" className=" w-max h-full ">
-        <Menu.Item icon={<HomeOutlined />}>
+        <Menu.Item icon={<HomeOutlined />} key="home">
           <Link to="/">Home</Link>
         </Menu.Item>
-        <Menu.Item icon={<FundOutlined />}>
+        <Menu.Item icon={<FundOutlined />} key="Cryptocurrencies">
           <Link to="/Cryptocurrencies">Crypto Currencies</Link>
         </Menu.Item>
-        <Menu.Item icon={<MoneyCollectOutlined />}>
-          <Link to="/exchanges">Exchanges</Link>
-        </Menu.Item>
-        <Menu.Item icon={<BulbOutlined />}>
+
+        <Menu.Item icon={<BulbOutlined />} key="news">
           <Link to="/news">News</Link>
         </Menu.Item>
       </Menu>

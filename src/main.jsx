@@ -16,10 +16,7 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
-      {
-        path: "/exchanges",
-        element: <Exchange />,
-      },
+
       {
         path: "/Cryptocurrencies",
         element: <Crypto />,

@@ -28,12 +28,13 @@ function Crypto({ simplified }) {
     );
   return (
     <>
+      <h1 className="p-5 m-4 text-3xl">Famous cryptos</h1>
       <div className="">
         {!simplified && (
           <Input
             placeholder="Search"
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-64 md:w-96 p-2 m-3  "
+            className="w-64 md:w-96 p-2 m-3 z-10 "
           />
         )}
       </div>
@@ -44,7 +45,7 @@ function Crypto({ simplified }) {
             sm={12}
             lg={6}
             key={currency.uuid}
-            className="m-auto md:m-0 "
+            className="m-auto md:m-0 z-20"
           >
             <Link to={`/crypto/${currency.uuid}`}>
               <Card
@@ -63,7 +64,7 @@ function Crypto({ simplified }) {
           </Col>
         ))}
         {simplified && (
-          <Col hoverable xs={20} sm={12} lg={6} className="m-auto md:m-0">
+          <Col xs={20} sm={12} lg={6} className="m-auto md:m-0">
             <Link to="/cryptocurrencies">
               <Card hoverable className="">
                 <div className="flex">

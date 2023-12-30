@@ -20,44 +20,47 @@ function News({ simplified }) {
     );
 
   return (
-    <Row gutter={[24, 24]}>
-      {cryptoNews?.map((news, i) => (
-        <Col xs={20} sm={12} lg={6} key={i}>
-          <Card hoverable className="">
-            <a href={news.url} target="_blank" rel="noreffer">
-              <div className="flex">
-                <Title level={4}>{news.title}</Title>
-                <img
-                  src={news.thumbnail || demoImage}
-                  alt="news"
-                  className="max-h-[200px] max-w-[200px]"
-                />
-              </div>
-              <p className="py-3">
-                {news.description > 100
-                  ? `${news.description.subString(0, 100)}....`
-                  : news.description}
-              </p>
-              <div className="">
-                {" "}
-                <Text>{moment(news.createdAt).startOf("ss").fromNow()}</Text>
-              </div>
-            </a>
-          </Card>
-        </Col>
-      ))}
-      {simplified && (
-        <Col hoverable xs={20} sm={12} lg={6} className="m-auto md:m-0">
-          <Link to="/news">
-            <Card hoverable className="">
-              <div className="flex">
-                <p className="mr-3">Show more</p> <ArrowRightOutlined />
-              </div>
+    <>
+      <h1 className="p-5 m-4 text-3xl">Top Crypto news</h1>
+      <Row gutter={[32, 32]}>
+        {cryptoNews?.map((news, i) => (
+          <Col xs={20} sm={12} lg={6} key={i} className="m-auto  md:m-0  z-20">
+            <Card hoverable className="w-96">
+              <a href={news.url} target="_blank" rel="noreffer">
+                <div className="flex">
+                  <Title level={4}>{news.title}</Title>
+                  <img
+                    src={news.thumbnail || demoImage}
+                    alt="news"
+                    className="max-h-[200px] max-w-[200px]"
+                  />
+                </div>
+                <p className="py-3">
+                  {news.description > 100
+                    ? `${news.description.subString(0, 100)}....`
+                    : news.description}
+                </p>
+                <div className="">
+                  {" "}
+                  <Text>{moment(news.createdAt).startOf("ss").fromNow()}</Text>
+                </div>
+              </a>
             </Card>
-          </Link>
-        </Col>
-      )}
-    </Row>
+          </Col>
+        ))}
+        {simplified && (
+          <Col xs={20} sm={12} lg={6} className="m-auto md:m-0">
+            <Link to="/news">
+              <Card hoverable className="">
+                <div className="flex">
+                  <p className="mr-3">Show more</p> <ArrowRightOutlined />
+                </div>
+              </Card>
+            </Link>
+          </Col>
+        )}
+      </Row>
+    </>
   );
 }
 

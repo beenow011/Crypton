@@ -29,7 +29,7 @@ function Home() {
         Global Crypto Stats
       </Title>
       {cryptoStats ? (
-        <div className="flex  bg-green-200  rounded-md shadow-lg overflow-hidden">
+        <div className="flex w-screen md:w-full bg-green-200  rounded-md shadow-lg overflow-hidden">
           <Row className="p-3  bg-green-200 w-max md:w-full rounded-md  overflow-hidden">
             <Col
               span={10}
@@ -123,7 +123,7 @@ function Home() {
             alt=""
             width={500}
             height={100}
-            className="hidden md:block"
+            className="hidden lg:block mr-10"
           />
         </div>
       ) : null}
